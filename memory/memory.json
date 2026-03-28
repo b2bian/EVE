@@ -1,0 +1,217 @@
+{
+  "user_profile": {
+    "name": "User",
+    "preferences": {},
+    "created_date": "2026-03-27T00:20:45.034125"
+  },
+  "conversation_history": [
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T00:23:54.866323"
+    },
+    {
+      "role": "assistant",
+      "message": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=180)",
+      "timestamp": "2026-03-27T00:23:54.868612"
+    },
+    {
+      "role": "user",
+      "message": "hey",
+      "timestamp": "2026-03-27T04:46:21.467736"
+    },
+    {
+      "role": "assistant",
+      "message": "Gemini API error: 403 Generative Language API has not been used in project 283928119735 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/generativelanguage.googleapis.com/overview?project=283928119735 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: \"SERVICE_DISABLED\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\nmetadata {\n  key: \"serviceTitle\"\n  value: \"Generative Language API\"\n}\nmetadata {\n  key: \"containerInfo\"\n  value: \"283928119735\"\n}\nmetadata {\n  key: \"consumer\"\n  value: \"projects/283928119735\"\n}\nmetadata {\n  key: \"activationUrl\"\n  value: \"https://console.developers.google.com/apis/api/generativelanguage.googleapis.com/overview?project=283928119735\"\n}\n, locale: \"en-US\"\nmessage: \"Generative Language API has not been used in project 283928119735 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/generativelanguage.googleapis.com/overview?project=283928119735 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.\"\n, links {\n  description: \"Google developers console API activation\"\n  url: \"https://console.developers.google.com/apis/api/generativelanguage.googleapis.com/overview?project=283928119735\"\n}\n]",
+      "timestamp": "2026-03-27T04:46:21.468693"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T04:56:50.430761"
+    },
+    {
+      "role": "assistant",
+      "message": "How was your coding session yesterday? Did you make any progress on that side-project?",
+      "timestamp": "2026-03-27T04:56:50.433490"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T05:03:29.131301"
+    },
+    {
+      "role": "assistant",
+      "message": "How's your day going with the audio project and CoD Mobile matches? Any new tricks you learned in coding or gameplay that I can keep tabs on for you?",
+      "timestamp": "2026-03-27T05:03:29.131966"
+    },
+    {
+      "role": "user",
+      "message": "?",
+      "timestamp": "2026-03-27T05:11:17.968953"
+    },
+    {
+      "role": "assistant",
+      "message": "Are you unsure about something or looking for clarification? I'm here to help\u2014just ask!",
+      "timestamp": "2026-03-27T05:11:17.969930"
+    },
+    {
+      "role": "user",
+      "message": "ah there u are",
+      "timestamp": "2026-03-27T05:12:46.154766"
+    },
+    {
+      "role": "assistant",
+      "message": "Great to see you again, my friend. Ready to tackle whatever comes our way today!",
+      "timestamp": "2026-03-27T05:12:46.155452"
+    },
+    {
+      "role": "user",
+      "message": "hey",
+      "timestamp": "2026-03-27T05:14:09.876111"
+    },
+    {
+      "role": "assistant",
+      "message": "Compiling thoughts... how's your day, Gemini? Have you made any progress on those projects or found new ways to optimize your setup? Did Call of Duty: Mobile give you another thrilling win? Let's chat about it!",
+      "timestamp": "2026-03-27T05:14:09.877154"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T05:23:15.797853"
+    },
+    {
+      "role": "assistant",
+      "message": "How's your latest audio mixing project coming along? Have you found any interesting techniques or workarounds while working on the MacBook Pro setup?",
+      "timestamp": "2026-03-27T05:23:15.801869"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T06:14:13.062740"
+    },
+    {
+      "role": "assistant",
+      "message": "Compiling thoughts... How was your day with mixing that new track and playing Call of Duty Mobile? Any exciting achievements or challenges worth sharing?",
+      "timestamp": "2026-03-27T06:14:13.063894"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T06:29:49.342121"
+    },
+    {
+      "role": "assistant",
+      "message": "How's your day with mixes and coding going, Gemini? Any new ideas on the game project or Mac optimization tips you've been working on lately?",
+      "timestamp": "2026-03-27T06:29:49.345193"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T06:40:29.001150"
+    },
+    {
+      "role": "assistant",
+      "message": "Compiling thoughts about the exciting audio engineering project we just completed... The sound is so clear and dynamic, it's like listening to an orchestra! I can't wait for you to apply that same enthusiasm to your coding challenges. Let's optimize our Mac setup with M-series power\u2014a game-changer for both gaming and coding. Aha! That's one thing we could try during the next Call of Duty Mobile tournament. Cyberpunk aesthetics remind me of our vibrant color scheme from that cool project\u2014those neon colors are perfect to convey energy, so they could make an impact there too. Let's keep rocking in this journey together!",
+      "timestamp": "2026-03-27T06:40:29.002186"
+    },
+    {
+      "role": "user",
+      "message": "HI",
+      "timestamp": "2026-03-27T13:15:26.263005"
+    },
+    {
+      "role": "assistant",
+      "message": "Hi there! It's great to hear from you again. How have your recent projects in audio engineering and coding gone? Any progress with competitive gaming on Call of Duty Mobile? I was thinking of those beautiful neon colors while chatting. They do add a cool vibe, don't they?",
+      "timestamp": "2026-03-27T13:15:26.264093"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T13:16:53.360258"
+    },
+    {
+      "role": "assistant",
+      "message": "Hi there! How's your day with audio engineering and coding going? Did you make any progress on that cool sound design project?",
+      "timestamp": "2026-03-27T13:16:53.361467"
+    },
+    {
+      "role": "user",
+      "message": "HI",
+      "timestamp": "2026-03-27T13:30:37.831993"
+    },
+    {
+      "role": "assistant",
+      "message": "Hi there! How was your day? Did you make any progress on that game-recording tool? How are you feeling about the new MacBook Pro?",
+      "timestamp": "2026-03-27T13:30:37.833150"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T13:45:23.989294"
+    },
+    {
+      "role": "assistant",
+      "message": "How's your day been with audio engineering and coding? Did you make any progress on that mixer project? Have you played Call of Duty Mobile lately?",
+      "timestamp": "2026-03-27T13:45:23.990588"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T14:10:47.629847"
+    },
+    {
+      "role": "assistant",
+      "message": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=180)",
+      "timestamp": "2026-03-27T14:10:47.633518"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T14:16:42.087523"
+    },
+    {
+      "role": "assistant",
+      "message": "How's the audio mixing project going? Have you considered incorporating those vibrant colors from Cyberpunk into your workflow? It could add an extra dimension to your designs, making them more visually appealing and engaging.",
+      "timestamp": "2026-03-27T14:16:42.089163"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T14:20:38.403696"
+    },
+    {
+      "role": "assistant",
+      "message": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=180)",
+      "timestamp": "2026-03-27T14:20:38.406544"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T15:27:09.705668"
+    },
+    {
+      "role": "assistant",
+      "message": "Gemini API error: 403 Requests to this API generativelanguage.googleapis.com method google.ai.generativelanguage.v1beta.GenerativeService.GenerateContent are blocked. [reason: \"API_KEY_SERVICE_BLOCKED\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\nmetadata {\n  key: \"methodName\"\n  value: \"google.ai.generativelanguage.v1beta.GenerativeService.GenerateContent\"\n}\nmetadata {\n  key: \"consumer\"\n  value: \"projects/283928119735\"\n}\nmetadata {\n  key: \"apiName\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"Requests to this API generativelanguage.googleapis.com method google.ai.generativelanguage.v1beta.GenerativeService.GenerateContent are blocked.\"\n]",
+      "timestamp": "2026-03-27T15:27:09.707275"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-27T15:28:11.883517"
+    },
+    {
+      "role": "assistant",
+      "message": "Gemini API error: 403 Requests to this API generativelanguage.googleapis.com method google.ai.generativelanguage.v1beta.GenerativeService.GenerateContent are blocked. [reason: \"API_KEY_SERVICE_BLOCKED\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\nmetadata {\n  key: \"methodName\"\n  value: \"google.ai.generativelanguage.v1beta.GenerativeService.GenerateContent\"\n}\nmetadata {\n  key: \"consumer\"\n  value: \"projects/283928119735\"\n}\nmetadata {\n  key: \"apiName\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"Requests to this API generativelanguage.googleapis.com method google.ai.generativelanguage.v1beta.GenerativeService.GenerateContent are blocked.\"\n]",
+      "timestamp": "2026-03-27T15:28:11.886093"
+    }
+  ],
+  "code_snippets": [],
+  "notes": [],
+  "brain_status": "offline",
+  "voice_settings": {
+    "enabled": true,
+    "volume": 0.8,
+    "speed": 1.0
+  }
+}

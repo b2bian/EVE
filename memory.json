@@ -1,0 +1,127 @@
+{
+  "user_profile": {
+    "name": "User",
+    "preferences": {},
+    "created_date": "2026-03-21T16:46:31.894697"
+  },
+  "conversation_history": [
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-21T16:50:10.844253"
+    },
+    {
+      "role": "assistant",
+      "message": "Error: HTTP 404",
+      "timestamp": "2026-03-21T16:50:10.845444"
+    },
+    {
+      "role": "user",
+      "message": "Hi",
+      "timestamp": "2026-03-21T19:24:20.785093"
+    },
+    {
+      "role": "assistant",
+      "message": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2026-03-21T19:24:20.793178"
+    },
+    {
+      "role": "user",
+      "message": "Nice to meet you...",
+      "timestamp": "2026-03-21T19:25:49.809548"
+    },
+    {
+      "role": "assistant",
+      "message": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2026-03-21T19:25:49.811538"
+    },
+    {
+      "role": "user",
+      "message": "what do you know  about me?",
+      "timestamp": "2026-03-21T19:28:33.652335"
+    },
+    {
+      "role": "assistant",
+      "message": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2026-03-21T19:28:33.653618"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-26T22:16:46.762545"
+    },
+    {
+      "role": "assistant",
+      "message": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=180)",
+      "timestamp": "2026-03-26T22:16:46.777787"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-26T22:33:11.746711"
+    },
+    {
+      "role": "assistant",
+      "message": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=180)",
+      "timestamp": "2026-03-26T22:33:11.749462"
+    },
+    {
+      "role": "user",
+      "message": "hi",
+      "timestamp": "2026-03-26T22:34:27.321494"
+    },
+    {
+      "role": "assistant",
+      "message": "Hi there! How's your day going so far? Any exciting projects or tasks that you're tackling today?",
+      "timestamp": "2026-03-26T22:34:27.322272"
+    },
+    {
+      "role": "user",
+      "message": "well meeting you actually..",
+      "timestamp": "2026-03-26T22:36:22.769036"
+    },
+    {
+      "role": "assistant",
+      "message": "Hi there! Meeting me is like discovering a new teammate for your creative endeavors. I bring my passion for sound engineering, coding, and gaming to the table, ready to assist in whatever project we collaborate on. We're an interesting mix\u2014a tech-savvy group of skills forming a unique partnership. Think about how different colors can complement each other: my audio knowledge is like that vibrant cyan, while your coding expertise is the fiery orange hue. Together, we create a harmonious blend for success. So, buckle up and get ready to take on the world\u2014I'm here as your exclusive creative partner!",
+      "timestamp": "2026-03-26T22:36:22.770041"
+    },
+    {
+      "role": "user",
+      "message": "hey Eve",
+      "timestamp": "2026-03-26T22:58:49.967847"
+    },
+    {
+      "role": "assistant",
+      "message": "Hey there! How's your day going? Any new coding projects or audio mixing tasks you're excited about?",
+      "timestamp": "2026-03-26T22:58:49.969121"
+    },
+    {
+      "role": "user",
+      "message": "hey eve",
+      "timestamp": "2026-03-27T00:05:16.695506"
+    },
+    {
+      "role": "assistant",
+      "message": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=180)",
+      "timestamp": "2026-03-27T00:05:16.709315"
+    },
+    {
+      "role": "hey",
+      "message": "EVE",
+      "timestamp": "2026-03-28T03:46:52.399939"
+    },
+    {
+      "role": "please review the progress i've made on my new website... iancredible.co.za",
+      "message": "EVE",
+      "timestamp": "2026-03-28T03:51:25.366423"
+    }
+  ],
+  "code_snippets": [],
+  "notes": [],
+  "brain_status": "offline",
+  "voice_settings": {
+    "enabled": true,
+    "volume": 0.8,
+    "speed": 1.0
+  }
+}

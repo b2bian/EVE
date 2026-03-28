@@ -1,0 +1,66 @@
+{
+  "theme": {
+    "appearance_mode": "Dark",
+    "colors": {
+      "background": "#0d0d0d",
+      "secondary_bg": "#1a1a1a",
+      "accent_cyan": "#00f2ff",
+      "accent_orange": "#ff9d00",
+      "warning": "#ff3333",
+      "success": "#00ff00",
+      "text_primary": "#e0e0e0",
+      "text_secondary": "#a0a0a0",
+      "border": "#1a1a1a"
+    }
+  },
+  "ui": {
+    "corner_radius": 2,
+    "border_width": 1,
+    "padding": 8,
+    "spacing": 4,
+    "font_size_title": 14,
+    "font_size_normal": 12,
+    "font_size_small": 10,
+    "font_family": "Courier New"
+  },
+  "layout": {
+    "sidebar_width": 250,
+    "right_sidebar_width": 280,
+    "min_window_width": 1200,
+    "min_window_height": 800
+  },
+  "voice": {
+    "enabled": true,
+    "model": "base",
+    "language": "en",
+    "beam_size": 5,
+    "best_of": 5,
+    "temperature": 0.4,
+    "condition_on_previous_text": true,
+    "compression_ratio_threshold": 2.4,
+    "logprob_threshold": -1.0,
+    "no_speech_threshold": 0.6
+  },
+  "persona": {
+    "name": "EVE",
+    "gender": "female",
+    "personality": "quirky",
+    "voice_engine": "xtts-v2",
+    "voice_speed": 1.0,
+    "voice_pitch": 1.2
+  },
+  "ollama": {
+    "base_url": "http://localhost:11434",
+    "model": "neural-chat",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 40,
+    "context_window": 2048
+  },
+  "system_monitor": {
+    "update_interval": 2000,
+    "show_cpu": true,
+    "show_memory": true,
+    "show_temperature": false
+  }
+}

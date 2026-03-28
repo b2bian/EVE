@@ -1,0 +1,184 @@
+name: Build EVE App (APK + DMG)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.0'
+          channel: 'stable'
+
+      - name: Create Flutter project
+        run: |
+          flutter create eve_app --org com.aiaiai --project-name eve_app
+
+      - name: Copy Flutter source files
+        run: |
+          cp flutter_src/main.dart eve_app/lib/main.dart
+          cp flutter_src/chat_screen.dart eve_app/lib/chat_screen.dart
+          cp flutter_src/api_service.dart eve_app/lib/api_service.dart
+          cp flutter_src/message_bubble.dart eve_app/lib/message_bubble.dart
+
+      - name: Get dependencies
+        run: |
+          cd eve_app
+          flutter pub get
+
+      - name: Build APK
+        run: |
+          cd eve_app
+          flutter build apk --release
+
+      - name: Upload APK to Release
+        uses: actions/upload-artifact@v3
+        with:
+          name: EVE-Android.apk
+          path: eve_app/build/app/outputs/flutter-app.apk
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.0'
+          channel: 'stable'
+
+      - name: Create Flutter project
+        run: |
+          flutter create eve_app --org com.aiaiai --project-name eve_app
+
+      - name: Copy Flutter source files
+        run: |
+          cp flutter_src/main.dart eve_app/lib/main.dart
+          cp flutter_src/chat_screen.dart eve_app/lib/chat_screen.dart
+          cp flutter_src/api_service.dart eve_app/lib/api_service.dart
+          cp flutter_src/message_bubble.dart eve_app/lib/message_bubble.dart
+
+      - name: Get dependencies
+        run: |
+          cd eve_app
+          flutter pub get
+
+      - name: Build macOS app
+        run: |
+          cd eve_app
+          flutter build macos --release
+
+      - name: Create DMG
+        run: |
+          mkdir -p installers
+          hdiutil create -volname "EVE" \
+                        -srcfolder eve_app/build/macos/Build/Products/Release/eve_app.app \
+                        -ov -format UDZO installers/EVE-macOS.dmg
+
+      - name: Upload DMG to Release
+        uses: actions/upload-artifact@v3
+        with:
+          name: EVE-macOS.dmg
+          path: installers/EVE-macOS.dmg
+
+  create-release:
+    needs: [build-apk, build-macos]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Download APK
+        uses: actions/download-artifact@v3
+        with:
+          name: EVE-Android.apk
+
+      - name: Download DMG
+        uses: actions/download-artifact@v3
+        with:
+          name: EVE-macOS.dmg
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v1.0.0-${{ github.run_number }}
+          release_name: EVE Release v1.0.0-${{ github.run_number }}
+          body: |
+            ## EVE App Release
+            
+            Build: ${{ github.run_number }}
+            Date: ${{ github.event.head_commit.timestamp }}
+            
+            ### Downloads
+            - **Android APK:** EVE-Android.apk - Install on Android devices
+            - **macOS DMG:** EVE-macOS.dmg - Drag to Applications folder
+            
+            ### Installation Instructions
+            
+            **Android:**
+            1. Download EVE-Android.apk
+            2. Enable "Unknown Sources" in Settings
+            3. Tap APK file to install
+            4. Launch EVE app
+            5. Connect to backend: http://your-mac-ip:8000
+            
+            **macOS:**
+            1. Download EVE-macOS.dmg
+            2. Double-click to mount
+            3. Drag EVE.app to Applications
+            4. Start backend on your Mac: `python3 backend/api.py`
+            5. Launch EVE from Applications
+            
+            ### Backend Setup
+            Run on your Mac:
+            ```bash
+            cd backend
+            source venv/bin/activate
+            python3 api.py
+            ```
+            
+            API runs on: http://localhost:8000
+            
+            ### Documentation
+            - [Quick Start](QUICK_START.md)
+            - [Build Guide](BUILD_AND_DEPLOYMENT_GUIDE.md)
+            - [API Docs](API_DOCUMENTATION.md)
+          draft: false
+          prerelease: false
+
+      - name: Upload APK Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./flutter-app.apk
+          asset_name: EVE-Android.apk
+          asset_content_type: application/vnd.android.package-archive
+
+      - name: Upload DMG Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./EVE-macOS.dmg
+          asset_name: EVE-macOS.dmg
+          asset_content_type: application/x-apple-diskimage

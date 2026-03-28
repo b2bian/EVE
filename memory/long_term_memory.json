@@ -1,0 +1,46 @@
+{
+  "user_name": "Gemini",
+  "created_date": "2026-03-21T06:58:47.952561",
+  "interests": {
+    "sound_engineering": true,
+    "competitive_gaming": true,
+    "coding": true,
+    "call_of_duty_mobile": true,
+    "audio_mixing": true,
+    "mac_optimization": true
+  },
+  "past_projects": [
+    {
+      "name": "EVE AI Assistant",
+      "description": "Cyberpunk-themed AI desktop companion with personality system",
+      "language": "Python",
+      "tags": [
+        "UI",
+        "AI",
+        "personality-system"
+      ],
+      "timestamp": "2026-03-21T06:58:47.953362"
+    }
+  ],
+  "learning_history": [
+    {
+      "topic": "Cyberpunk Design",
+      "insight": "Neon colors (#00f2ff cyan, #ff9d00 orange) create compelling visual depth",
+      "context": "UI Theme Design",
+      "timestamp": "2026-03-21T06:58:47.953749"
+    }
+  ],
+  "personality_preferences": {
+    "default_personality": "quirky",
+    "voice_name": "EVE",
+    "use_tts": false
+  },
+  "tags": [
+    "sound_engineer",
+    "gamer",
+    "developer",
+    "creative"
+  ],
+  "num_sessions": 43,
+  "last_session": "2026-03-27T00:01:17.291932"
+}
