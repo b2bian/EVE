@@ -31,10 +31,10 @@ jobs:
 
       - name: Copy Flutter source files
         run: |
-          cp flutter_src/main.dart eve_app/lib/main.dart
-          cp flutter_src/chat_screen.dart eve_app/lib/chat_screen.dart
-          cp flutter_src/api_service.dart eve_app/lib/api_service.dart
-          cp flutter_src/message_bubble.dart eve_app/lib/message_bubble.dart
+          cp eve_app_main.dart eve_app/lib/main.dart
+          cp eve_app_chat_screen.dart eve_app/lib/chat_screen.dart
+          cp eve_app_api_service.dart eve_app/lib/api_service.dart
+          cp eve_app_message_bubble.dart eve_app/lib/message_bubble.dart
 
       - name: Get dependencies
         run: |
@@ -69,10 +69,10 @@ jobs:
 
       - name: Copy Flutter source files
         run: |
-          cp flutter_src/main.dart eve_app/lib/main.dart
-          cp flutter_src/chat_screen.dart eve_app/lib/chat_screen.dart
-          cp flutter_src/api_service.dart eve_app/lib/api_service.dart
-          cp flutter_src/message_bubble.dart eve_app/lib/message_bubble.dart
+          cp eve_app_main.dart eve_app/lib/main.dart
+          cp eve_app_chat_screen.dart eve_app/lib/chat_screen.dart
+          cp eve_app_api_service.dart eve_app/lib/api_service.dart
+          cp eve_app_message_bubble.dart eve_app/lib/message_bubble.dart
 
       - name: Get dependencies
         run: |
@@ -100,31 +100,33 @@ jobs:
   create-release:
     needs: [build-apk, build-macos]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Download APK
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: EVE-Android.apk
 
       - name: Download DMG
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: EVE-macOS.dmg
 
-      - name: Create Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: List downloaded files
+        run: ls -lah
+
+      - name: Create Release with Assets
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: v1.0.0-${{ github.run_number }}
-          release_name: EVE Release v1.0.0-${{ github.run_number }}
+          tag_name: v1.0.0-build${{ github.run_number }}
+          name: EVE Release v1.0.0 (Build ${{ github.run_number }})
           body: |
             ## EVE App Release
             
             Build: ${{ github.run_number }}
-            Date: ${{ github.event.head_commit.timestamp }}
             
             ### Downloads
             - **Android APK:** EVE-Android.apk - Install on Android devices
@@ -134,7 +136,7 @@ jobs:
             
             **Android:**
             1. Download EVE-Android.apk
-            2. Enable "Unknown Sources" in Settings
+            2. Enable "Unknown Sources" in Settings > Security
             3. Tap APK file to install
             4. Launch EVE app
             5. Connect to backend: http://your-mac-ip:8000
@@ -160,25 +162,10 @@ jobs:
             - [Quick Start](QUICK_START.md)
             - [Build Guide](BUILD_AND_DEPLOYMENT_GUIDE.md)
             - [API Docs](API_DOCUMENTATION.md)
+          files: |
+            flutter-app.apk
+            EVE-macOS.dmg
           draft: false
           prerelease: false
-
-      - name: Upload APK Asset
-        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./flutter-app.apk
-          asset_name: EVE-Android.apk
-          asset_content_type: application/vnd.android.package-archive
-
-      - name: Upload DMG Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./EVE-macOS.dmg
-          asset_name: EVE-macOS.dmg
-          asset_content_type: application/x-apple-diskimage
